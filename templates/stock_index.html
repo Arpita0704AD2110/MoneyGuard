@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MoneyGuard - Stock Prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/css/stock_index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="/static/images/logo2.png" alt="MoneyGuard Logo" class="logo">
+            </a>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="bi bi-person-circle"></i> {{ user.name }}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                    <li><a class="dropdown-item" href="">{{ user.email }}</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="/">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Stock Prediction</h1>
+            <h2>Unlock Insights, Make Smarter Investments</h2>
+            <p>Welcome to the Stock Prediction feature of MoneyGuard. Our advanced machine learning models provide
+                personalized stock insights to help you make informed investment decisions. Analyze market trends,
+                predict stock movements, and manage your portfolio with confidence.</p>
+      
+        <div>
+            <img src="../static/images/nse.png" alt="nse_image" class="logo1">
+        </div>
+        <h3 class="h21">Empower yourself with the knowledge to invest smarter. Explore the Stock Prediction feature on MoneyGuard today.
+
+        </h3>
+    
+    <a href="{{ url_for('start_predicting') }}" class="cta">Start Predicting Now</a>
+    </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer  text-center">
+            <img src="/static/images/logo2.png" alt="MoneyGuard Logo" class="foot_logo">
+            <h2>Your Complete Financial Solution and Stock Prediction</h2>
+            <p>Copyright &copy; 2025 MoneyGuard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

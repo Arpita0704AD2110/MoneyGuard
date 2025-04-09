@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MoneyGuard - Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="/static/images/logo2.png" alt="MoneyGuard Logo" class="logo">
+            </a>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="bi bi-person-circle"></i> {{ user.name }}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                    <li><a class="dropdown-item" href="">{{ user.email }}</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="/">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-5 text-center">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6">
+                <img src="/static/images/images(13).png" alt="Budget Tracking" style="height: 25rem;">
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-danger fw-bold">LET'S START THE JOURNEY</h2>
+                <p>MoneyGuard is your personal finance companion, helping you track expenses, manage budgets, and make
+                    smarter investment decisions. With a powerful stock prediction feature, we bring the future of
+                    finance to your fingertips. Our platform offers real-time insights, secure data handling, and a
+                    user-friendly interface designed to simplify financial management. Whether you're a beginner looking
+                    to save or an investor seeking growth, MoneyGuard has something for you. Start your journey toward
+                    financial stability today. Explore expense tracking, budgeting, and intelligent stock market
+                    predictions—all in one place.</p>
+
+                <div class="row1">
+                    <a href="{{ url_for('finance') }}" class="cta">Finance Management</a>
+                    <a href="{{ url_for('start') }}" class="cta">Stock Prediction</a>
+                  
+                </div>
+            </div> 
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer  text-center">
+            <img src="/static/images/logo2.png" alt="MoneyGuard Logo" class="foot_logo">
+            <h2>Your Complete Financial Solution and Stock Prediction</h2>
+            <p>Copyright &copy; 2025 MoneyGuard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

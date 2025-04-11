@@ -1,4 +1,5 @@
-💰 MoneyGuard: Finance Management with Stock Prediction
+##💰 MoneyGuard: Finance Management with Stock Prediction
+
 MoneyGuard is a web-based application that integrates personal finance management with stock market prediction using machine learning. It allows users to track their income and expenses, analyze their financial trends through visual dashboards, and receive AI-powered next-day stock price forecasts. The goal of the project is to help users make smarter financial and investment decisions within a single platform.
 
 🚀 Features

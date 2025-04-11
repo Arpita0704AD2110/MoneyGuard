@@ -41,6 +41,10 @@ User credentials are secured using AES-256 encryption, and the application runs 
 ## 📌 How to Run Locally
 
 Clone the repository
+
 Install required packages using pip install -r requirements.txt
+
 Run the app using python app.py
+
 Access the application at http://127.0.0.1:5000 in your browser
+

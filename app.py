@@ -4,7 +4,7 @@ import bcrypt
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from keras.models import load_model  # type: ignore
+from keras.models import load_model  
 from sklearn.preprocessing import MinMaxScaler
 import yfinance as yf
 import io

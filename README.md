@@ -48,3 +48,6 @@ Run the app using python app.py
 
 Access the application at http://127.0.0.1:5000 in your browser
 
+## 🔗 Live Demo
+
+https://moneyguard.onrender.com

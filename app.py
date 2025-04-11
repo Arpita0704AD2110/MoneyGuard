@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request, redirect, session, url_for
+from flask import Flask, jsonify, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 import bcrypt
 import numpy as np
@@ -113,26 +113,21 @@ def logout():
 def load_stock_model(stock_symbol):
     """Load the corresponding model for a given stock symbol."""
     model_path = os.path.join(model_dir, f'stock_price_model_{stock_symbol}.h5')
-    return load_model(model_path) if os.path.exists(model_path) else None
+    if os.path.exists(model_path):
+        return load_model(model_path)
+    else:
+        return None
 
 def fetch_data(stock_symbol):
     """Fetch historical stock data for the given symbol."""
-    try:
-        stock_data = yf.download(stock_symbol, start='2010-01-01', end=pd.Timestamp.today().strftime('%Y-%m-%d'))
-        return stock_data if not stock_data.empty else None
-    except Exception as e:
-        print(f"Error fetching stock data: {e}")
-        return None
+    stock_data = yf.download(stock_symbol, start='2010-01-01', end=pd.Timestamp.today().strftime('%Y-%m-%d'))
+    return stock_data
 
 def fetch_live_price(stock_symbol):
     """Fetch the current stock price for the given symbol."""
-    try:
-        live_data = yf.Ticker(stock_symbol)
-        current_price = live_data.history(period='1d')
-        return current_price['Close'].iloc[-1] if not current_price.empty else None
-    except Exception as e:
-        print(f"Error fetching live price: {e}")
-        return None
+    live_data = yf.Ticker(stock_symbol)
+    current_price = live_data.history(period='1d')
+    return current_price['Close'].iloc[0]
 
 def preprocess_data(stock_data):
     """Preprocess the stock data for model prediction."""
